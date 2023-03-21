@@ -6,6 +6,12 @@
 #Description
  This app's designed to generate random, secure password for the user.
  Based on the answers coming up in prompts, user can choose character length and types of characters in the password.
+ 
+ 
+ ![picture 1](https://user-images.githubusercontent.com/117002171/226681166-1317ebbb-f118-416a-ae3f-4e75476a1ff2.PNG)
+ 
+ ---
+ 
 
 
 
