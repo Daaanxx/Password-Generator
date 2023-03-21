@@ -93,6 +93,7 @@ var choiceArr = [];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  choiceArr = [];
   passwordLenght = prompt(
     "Please choose between 8 and 128 characters for your password."
   );
@@ -122,9 +123,7 @@ function getPasswordOptions() {
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-  var randomIndex = Math.floor(Math.random() * choiceArr.length);
-}
+function getRandom(arr) {}
 
 // Function to generate password with user input
 function generatePassword() {
@@ -133,6 +132,7 @@ function generatePassword() {
     var randomIndex = Math.floor(Math.random() * choiceArr.length);
     password = password + choiceArr[randomIndex];
   }
+  return password;
 }
 
 // Get references to the #generate element
@@ -140,11 +140,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var correctPromts = getPasswordOptions();
-  if (correctPromts) {
+  var correctPrompts = getPasswordOptions();
+  var passwordText = document.querySelector("#password");
+  if (correctPrompts) {
     var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-
     passwordText.value = password;
   }
 }
