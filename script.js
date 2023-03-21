@@ -88,18 +88,51 @@ var upperCasedCharacters = [
   "Z",
 ];
 
+var passwordLenght = "";
+var choiceArr = [];
+
 // Function to prompt user for password options
 function getPasswordOptions() {
-  // var Pssleng = prompt("Ender 8 - 128 char")
-  // console.log(Pssleng);
+  passwordLenght = prompt(
+    "Please choose between 8 and 128 characters for your password."
+  );
+  if (passwordLenght < 8 || passwordLenght > 128) {
+    alert("Incorect number of characters!");
+    return false;
+  }
+  if (
+    confirm("Press OK if you want your password to have LOWERCASE characters.")
+  ) {
+    choiceArr = choiceArr.concat(lowerCasedCharacters);
+  }
+  if (
+    confirm("Press OK if you want your password to have UPPERCASE characters.")
+  ) {
+    choiceArr = choiceArr.concat(upperCasedCharacters);
+  }
+  if (confirm("Press OK if you want your password to have NUMBERS.")) {
+    choiceArr = choiceArr.concat(numericCharacters);
+  }
+  if (
+    confirm("Press OK if you want your password to have SPECIAL characters.")
+  ) {
+    choiceArr = choiceArr.concat(specialCharacters);
+  }
+  return true;
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
+function getRandom(arr) {
+  var randomIndex = Math.floor(Math.random() * choiceArr.length);
+}
 
 // Function to generate password with user input
 function generatePassword() {
-  // getPasswordOptions TO DESPLAY PROMPT
+  var password = "";
+  for (var i = 0; i < passwordLenght; i++) {
+    var randomIndex = Math.floor(Math.random() * choiceArr.length);
+    password = password + choiceArr[randomIndex];
+  }
 }
 
 // Get references to the #generate element
@@ -107,10 +140,13 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var correctPromts = getPasswordOptions();
+  if (correctPromts) {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+    passwordText.value = password;
+  }
 }
 
 // Add event listener to generate button
