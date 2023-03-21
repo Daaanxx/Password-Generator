@@ -11,6 +11,9 @@
  ![picture 1](https://user-images.githubusercontent.com/117002171/226681166-1317ebbb-f118-416a-ae3f-4e75476a1ff2.PNG)
  
  ---
+ ![picture 2](https://user-images.githubusercontent.com/117002171/226681918-5c6ffaec-d777-4422-9f01-260fe7b14a80.PNG)
+ -----
+ ![picture 3](https://user-images.githubusercontent.com/117002171/226681931-a0255bc8-dc70-4975-a88e-43f0fc4e1734.PNG)
  
 
 
